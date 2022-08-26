@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<div align="center">
+    <div>
+        <div></div>
+        <div >
+            <div >
+                <div >
+                    <div th:if="${errorMessage}" style="color: red">
+                        <div th:text="${errorMessage}"></div>
+                    </div>
+                    <form action="#" th:action="@{/check}" th:object="${user}" method="post" required="true">
+                        <p>Login: <input  type="text" th:field="*{username}" required="true"/></p>
+                        <p>Password: <input type="text" th:field="*{password}" required="true"/></p>
+                        <div >
+                            <div>
+                                <img alt="captcha" src="/captcha-servlet">
+                            </div>
+                            <div class="col-md-6">
+                                <input  th:field="*{captcha}"  placeholder="Enter Captcha" required="true"/>
+                            </div>
+                        </div>
+                        <p><input type="submit"  value="Login"/>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
